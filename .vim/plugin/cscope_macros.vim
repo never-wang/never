@@ -37,11 +37,13 @@ if has("cscope")
     " if you want the reverse search order.
     set csto=0
 
+    " confilct with another plugin
     " add any cscope database in current directory
-    if filereadable("cscope.out")
-        cs add cscope.out  
+    "if filereadable("cscope.out")
+    "    cs add cscope.out  
     " else add the database pointed to by environment variable 
-    elseif $CSCOPE_DB != ""
+    "elseif $CSCOPE_DB != ""
+    if $CSCOPE_DB != ""
         cs add $CSCOPE_DB
 	endif
 
