@@ -85,6 +85,9 @@ set nobackup
 "set incsearch
 set autoindent
 
+set tabstop=4
+set expandtab
+
 "Show matching bracets
 set showmatch
 
