@@ -140,7 +140,9 @@ set write
 
 "AutoCommand
 "新建.sh文件，自动插入文件头
-autocmd BufNewFile *.sh exec ":call SetTitle()"
+autocmd BufNewFile *.sh exec ":call SetTitleShell()"
+"新建.py文件，自动插入文件头
+autocmd BufNewFile *.py exec ":call SetTitlePython()"
 "新建文件后，自动定位到文件末尾
 autocmd BufNewFile * normal G
 
@@ -211,8 +213,8 @@ endif
 endfunc
 "结束定义Debug
 
-"定义函数SetTitle，自动插入文件头
-func SetTitle()
+"定义函数SetTitleShell，自动插入文件头
+func SetTitleShell()
 call setline(1, "\#########################################################################")
 call append(line("."), "\# Author: Wang Wencan")
 call append(line(".")+1, "\# Created Time: ".strftime("%c"))
@@ -220,6 +222,18 @@ call append(line(".")+2, "\# File Name: ".expand("%"))
 call append(line(".")+3, "\# Description: ")
 call append(line(".")+4, "\#########################################################################")
 call append(line(".")+5, "\#!/bin/bash")
+call append(line(".")+6, "")
+endfunc
+
+"定义函数SetTitlePython，自动插入文件头
+func SetTitlePython()
+call setline(1, "\#########################################################################")
+call append(line("."), "\# Author: Wang Wencan")
+call append(line(".")+1, "\# Created Time: ".strftime("%c"))
+call append(line(".")+2, "\# File Name: ".expand("%"))
+call append(line(".")+3, "\# Description: ")
+call append(line(".")+4, "\#########################################################################")
+call append(line(".")+5, "\#!/usr/bin/env python")
 call append(line(".")+6, "")
 endfunc
 
