@@ -197,6 +197,10 @@ endif
 endfunc
 "结束定义CompileRun
 
+
+"中文输入支持
+:let g:vimim_cloud='sogou'
+
 "定义Debug函数，用来调试程序
 func Debug()
 exec "w"
