@@ -231,13 +231,13 @@ endfunc
 
 "定义函数SetTitlePython，自动插入文件头
 func SetTitlePython()
-call setline(1, "\#########################################################################")
-call append(line("."), "\# Author: Wang Wencan")
-call append(line(".")+1, "\# Created Time: ".strftime("%c"))
-call append(line(".")+2, "\# File Name: ".expand("%"))
-call append(line(".")+3, "\# Description: ")
-call append(line(".")+4, "\#########################################################################")
-call append(line(".")+5, "\#!/usr/bin/env python")
+call setline(1, "\#!/usr/bin/env python")
+call append(line("."), "\#########################################################################")
+call append(line(".")+1, "\# Author: Wang Wencan")
+call append(line(".")+2, "\# Created Time: ".strftime("%c"))
+call append(line(".")+3, "\# File Name: ".expand("%"))
+call append(line(".")+4, "\# Description: ")
+call append(line(".")+5, "\#########################################################################")
 call append(line(".")+6, "")
 endfunc
 
