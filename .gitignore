@@ -16,7 +16,6 @@
 .local/
 .mission-control/
 .mozilla/
-.never/
 .pam_environment
 .pki/
 .profile
