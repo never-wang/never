@@ -21,7 +21,7 @@ function proml {
             ;;
     esac
 
-    PS1="$TITLEBAR\u@\h:\w$LIGHT_RED\$(parse_git_branch)$WHITE\$"
+    PS1="$TITLEBAR\u@\h:\w\$(parse_git_branch)\$ "
     PS2='> '
     PS4='+ '
 }

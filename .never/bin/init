@@ -1,0 +1,17 @@
+#!/bin/bash
+#########################################################################
+# Author: Wang Wencan
+# File Name: init.sh
+# Description: 
+#########################################################################
+
+DIR=`dirname $0`
+FULL_PATH=`readlink -m $PWD/$DIR`
+
+source $FULL_PATH/sh-libs
+
+debian_install
+{
+    sudo apt-get update
+}
+
