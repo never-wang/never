@@ -5,6 +5,7 @@ automake
 bison
 libcunit1-dev
 python-wxtools
+g++
 
 #chinese support
 language-pack-zh-hans

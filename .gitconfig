@@ -1,5 +1,12 @@
 [user]
-	name = nEver
-	email = never.wencan@gmail.com
+	name = Wang Wencan
+    email = never.wencan@gmail.com
+
 [core]
 	editor = vim
+[alias]    
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    lt = log --branches --remotes --tags --graph --oneline --decorate --color
+
+[push]
+    defualt=current
