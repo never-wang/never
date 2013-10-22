@@ -1,6 +1,11 @@
 # User specific aliases and functions
 function parse_git_branch {
-    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+    local TOP_DIR=`git rev-parse --show-toplevel`
+    local HOME_DIR=`readlink -m ~`
+
+    if [ "x$TOP_DIR" != "x$HOME_DIR" ]; then
+        git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+    fi
 }
 
 function proml {
@@ -11,6 +16,7 @@ function proml {
     local LIGHT_GREEN="\[\033[1;32m\]"
     local       WHITE="\[\033[1;37m\]"
     local  LIGHT_GRAY="\[\033[0;37m\]"
+    local    NO_COLOR="\[\033[0m\]"
     case $TERM in
         xterm*)
             TITLEBAR='\[\033]0;\u@\h:\w\007\]'
@@ -21,7 +27,7 @@ function proml {
             ;;
     esac
 
-    PS1="$TITLEBAR\u@\h:\w\$(parse_git_branch)\$ "
+    PS1="$TITLEBAR\u@\h:\w$LIGHT_RED\$(parse_git_branch)$NO_COLOR\$ "
     PS2='> '
     PS4='+ '
 }
