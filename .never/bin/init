@@ -6,12 +6,24 @@
 #########################################################################
 
 DIR=`dirname $0`
-FULL_PATH=`readlink -m $PWD/$DIR`
+BIN_PATH=`readlink -m $PWD/$DIR`
 
-source $FULL_PATH/sh-libs
+LIBEXEC_PATH=`readlink -m $BIN_PATH/../libexec`
+ETC_PATH=`readlink -m $BIN_PATH/../etc`
+ROOT_PATH=`readlink -m $BIN_PATH/../../`
+HOME_PATH=`readlink -m ~`
 
-debian_install
+source $LIBEXEC_PATH/sh-libs
+
+_debian_install()
 {
-    sudo apt-get update
+    _execute "sudo apt-get update"
+
+    packages=`cat $ETC_PATH/apt-get.list | grep -v "#"`
+
+    _execute "sudo apt-get install -y $packages"
 }
+
+#_debian_install
+find . -maxdepth 1 -not -regex '\.' -exec mv -t $HOME_PATH {} \;
 
