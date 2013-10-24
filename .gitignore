@@ -24,4 +24,9 @@ Person/
 Work/
 bin/
 super/
+.gstreamer-0.10/
+.lesshst
+.pki/
+.speech-dispatcher/
+.xsession-errors.old
 

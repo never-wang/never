@@ -1,7 +1,10 @@
 # User specific aliases and functions
 function parse_git_branch {
-    local TOP_DIR=`git rev-parse --show-toplevel`
+    local TOP_DIR=`git rev-parse --show-toplevel 2> /dev/null`
     local HOME_DIR=`readlink -m ~`
+
+    #check if in git repository
+    #echo `git branch | grep "Not a git repository"`
 
     if [ "x$TOP_DIR" != "x$HOME_DIR" ]; then
         git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
