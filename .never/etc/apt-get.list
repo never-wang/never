@@ -9,3 +9,6 @@ g++
 
 #chinese support
 language-pack-zh-hans
+
+# for goagent
+python-vte

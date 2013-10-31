@@ -25,5 +25,5 @@ _debian_install()
 }
 
 #_debian_install
-find . -maxdepth 1 -not -regex '\.' -exec mv -t $HOME_PATH {} \;
+find $ROOT_PATH -maxdepth 1 -not -regex '\.' -exec mv -t $HOME_PATH {} \;
 
