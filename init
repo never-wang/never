@@ -24,12 +24,13 @@ _debian_install()
 
 #_debian_install
 
+echo $
 
 #add source .never/bashrc into ~/bashrc
-MY_BASHRC_PATH=$NEVER_PATH/bashrc
+MY_BASHRC_PATH=$HOME_PATH/.never/bashrc
 IF_SOURCE=`grep "$MY_BASHRC_PATH" $HOME_PATH/.bashrc`
 [ -z "$IF_SOURCE" ] && echo "source $MY_BASHRC_PATH" >> $HOME_PATH/.bashrc
 
 find $ROOT_PATH -maxdepth 1 -not -regex "$ROOT_PATH\(\|/init\)" -exec mv -t $HOME_PATH {} \;
-#rm -r $ROOT_PATH
+rm -r $ROOT_PATH
 
