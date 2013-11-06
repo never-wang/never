@@ -16,4 +16,5 @@ if [ -z "$SOURCE_SH_LIBS" ]; then
     
     ETC_PATH=`readlink -m $LIB_PATH/../etc`
     HOME_PATH=`readlink -m ~`
+    OUTPUT=/dev/null
 fi
