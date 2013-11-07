@@ -8,5 +8,6 @@
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     lt = log --branches --remotes --tags --graph --oneline --decorate --color
 
+# for default, push current branch
 [push]
-    defualt=current
+    default=current

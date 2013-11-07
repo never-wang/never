@@ -4,4 +4,16 @@
 # File Name: sh-libs.sh
 # Description: 
 #########################################################################
+if [ -z "$SOURCE_SH_LIBS" ]; then
+    SOURCE_SH_LIBS="true"
 
+    _execute()
+    {
+        cmd=$1
+        echo $cmd > $OUTPUT
+        $cmd
+    }
+    
+    ETC_PATH=`readlink -m $LIB_PATH/../etc`
+    OUTPUT=/dev/null
+fi
