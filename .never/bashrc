@@ -36,5 +36,5 @@ function proml {
 }
 
 proml
-#export PATH="~/.never/bin:$PATH"
+export PATH="~/.never/bin:$PATH"
 
