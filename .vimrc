@@ -166,6 +166,12 @@ map <leader>t :tabnew<CR>
 map <leader>n :tabn<CR>
 map <leader>p :tabp<CR>
 
+" Switch window mappings 
+nmap <C-k> :wincmd k<CR>
+nmap <C-j> :wincmd j<CR>
+nmap <C-l> :wincmd l<CR>
+nmap <C-h> :wincmd h<CR>
+
 "用cscope支持
 set csprg=/usr/bin/cscope
 let Tlist_Ctags_Cmd='/usr/bin/ctags'

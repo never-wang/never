@@ -29,7 +29,7 @@ MY_BASHRC_PATH=~/.never/bashrc
 IF_SOURCE=`grep "$MY_BASHRC_PATH" ~/.bashrc`
 [ -z "$IF_SOURCE" ] && echo "source $MY_BASHRC_PATH" >> ~/.bashrc
 
-find $ROOT_PATH -maxdepth 1 -not -regex "$ROOT_PATH\(\|/init\)" -exec cp -rf {} ~ \;
+find $ROOT_PATH -maxdepth 1 -exec cp -rf {} ~ \;
 source ~/.bashrc
 rm -rf $ROOT_PATH
 
