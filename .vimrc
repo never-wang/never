@@ -167,10 +167,10 @@ map <leader>n :tabn<CR>
 map <leader>p :tabp<CR>
 
 " Switch window mappings 
-nmap <C-k> :wincmd k<CR>
-nmap <C-j> :wincmd j<CR>
-nmap <C-l> :wincmd l<CR>
-nmap <C-h> :wincmd h<CR>
+"nmap <C-k> :wincmd k<CR>
+"nmap <C-j> :wincmd j<CR>
+"nmap <C-l> :wincmd l<CR>
+"nmap <C-h> :wincmd h<CR>
 
 "用cscope支持
 set csprg=/usr/bin/cscope
@@ -252,3 +252,6 @@ endfunc
 if filereadable("/etc/vim/vimrc.local")
   source /etc/vim/vimrc.local
 endif
+
+" rename the tmux window with the filename opened in vim
+"autocmd BufReadPost,FileReadPost,BufNewFile * call system("tmux rename-window %")

@@ -38,3 +38,6 @@ function proml {
 proml
 export PATH="~/.never/bin:$PATH"
 
+#256 colour support
+#export TERM=xterm-256color
+
