@@ -5,13 +5,4 @@
 # File Name: work.sh
 # Description: start or attach a work session
 #########################################################################
-
-SESSION_NAME=WORK
-tmux has-session -t $SESSION_NAME &> /dev/null
-
-if [ $? -eq 1 ]; then
-    #not exist
-    tmux new-session -s $SESSION_NAME
-else
-    tmux attach-session -t $SESSION_NAME
-fi
+tmux-session WORK

@@ -1,0 +1,27 @@
+#!/bin/bash
+#########################################################################
+# Author: Wang Wencan
+# Created Time: Mon 11 Nov 2013 07:36:10 PM CST
+# File Name: work.sh
+# Description: start or attach a work session
+#########################################################################
+
+usage_print()
+{
+    echo "Usage : $(basename $0) session-name"
+}
+
+if [ $# -ne 1 ]; then
+    usage_print
+    exit -1
+fi
+
+SESSION_NAME=$1
+tmux has-session -t $SESSION_NAME &> /dev/null
+
+if [ $? -eq 1 ]; then
+    #not exist
+    tmux new-session -s $SESSION_NAME
+else
+    tmux attach-session -t $SESSION_NAME
+fi
