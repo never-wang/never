@@ -37,4 +37,8 @@ vim +PluginInstall +qall
 cd ~/.vim/bundle/YouCompleteMe && ./install.sh --clang-completer
 
 source ~/.bashrc
+# AUTOSTART=/home/never/.config/autostart
+# cp ~/.never/etc/eye.desktop $AUTOSTART/eye.desktop 
+# 
+# source ~/.bashrc
 
