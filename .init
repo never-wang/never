@@ -30,6 +30,10 @@ IF_SOURCE=`grep "$MY_BASHRC_PATH" ~/.bashrc`
 [ -z "$IF_SOURCE" ] && echo "source $MY_BASHRC_PATH" >> ~/.bashrc
 
 find $ROOT_PATH -maxdepth 1 -mindepth 1 -exec cp -rf {} ~ \;
+
+AUTOSTART=/home/never/.config/autostart
+cp ~/.never/etc/eye.desktop $AUTOSTART/eye.desktop 
+
 source ~/.bashrc
-rm -rf $ROOT_PATH
+#rm -rf $ROOT_PATH
 

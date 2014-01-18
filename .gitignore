@@ -28,4 +28,4 @@ super/
 .pki/
 .speech-dispatcher/
 .xsession-errors.old
-
+.never/bin/Eye/*.pyc
