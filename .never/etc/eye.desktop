@@ -1,10 +1,10 @@
 [Desktop Entry]
 Type=Application
-Exec=eye
+Exec=%HOMEDIR%/.never/bin/eye
 Hidden=false
 NoDisplay=false
 X-GNOME-Autostart-enabled=true
-Name[en_US]=Eye
-Name=Eye
+Name[en_US]=eye
+Name=eye
 Comment[en_US]=
 Comment=
