@@ -255,3 +255,8 @@ endif
 
 " rename the tmux window with the filename opened in vim
 "autocmd BufReadPost,FileReadPost,BufNewFile * call system("tmux rename-window %")
+
+" Protobuf support
+augroup filetype
+   au! BufRead,BufNewFile *.proto setfiletype proto
+augroup end
