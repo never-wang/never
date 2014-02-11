@@ -1,0 +1,32 @@
+#!/bin/bash
+#########################################################################
+# Author: Wang Wencan
+# Created Time: Wed 27 Nov 2013 01:08:44 PM CST
+# File Name: .never/bin/replace.sh
+# Description: 
+#########################################################################
+set -e
+
+usage_print()
+{
+    echo "Execute \"sed -i s/<SRC_REG>/<DST_REG>/g\" for every file that" \
+        "match <FILE_REG> in current path"
+    echo ""
+    echo "Usage : $(basename $0) <SRC_REG> <DST_REG> <FILE_REG>"
+}
+
+if [ $# -ne 3 ]; then
+    usage_print
+    exit -1
+fi
+
+SRC_REG=$1
+DST_REG=$2
+FILE_REG=$3
+
+files=$(find . -regex "$FILE_REG")
+for file in $files; do
+    echo $file
+    sed -i "s/$SRC_REG/$DST_REG/g" $file
+done
+
