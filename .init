@@ -31,10 +31,10 @@ IF_SOURCE=`grep "$MY_BASHRC_PATH" ~/.bashrc`
 
 find $ROOT_PATH -maxdepth 1 -mindepth 1 -exec cp -rf {} ~ \;
 
-AUTOSTART=/home/never/.config/autostart
+AUTOSTART=$HOME/.config/autostart
+mkdir -p $AUTOSTART
 cp ~/.never/etc/eye.desktop $AUTOSTART/eye.desktop
 sed -i "s;%HOMEDIR%;$HOME;g" $AUTOSTART/eye.desktop
 
 source ~/.bashrc
-rm -rf $ROOT_PATH
 
