@@ -17,3 +17,8 @@ python-vte
 
 python-tk
 python-matplotlib
+python-appindicator
+
+# for YouCompleteMe
+cmake
+python-dev

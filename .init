@@ -36,5 +36,12 @@ mkdir -p $AUTOSTART
 cp ~/.never/etc/eye.desktop $AUTOSTART/eye.desktop
 sed -i "s;%HOMEDIR%;$HOME;g" $AUTOSTART/eye.desktop
 
+# for goagent 
+cd ~/.never/bin/goagent/server && python uploader.zip
+cd ~/.never/bin/goagent/local && python addto-startup.py
+
+# for YouCompleteMe
+cd ~/.vim/bundle/YouCompleteMe && ./install.sh --clang-completer
+
 source ~/.bashrc
 
