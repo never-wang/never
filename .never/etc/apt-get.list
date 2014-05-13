@@ -14,3 +14,6 @@ cmake
 python-dev
 
 language-pack-zh-hans
+python-tk
+python-matplotlib
+python-appindicator
