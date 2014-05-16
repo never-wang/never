@@ -49,3 +49,6 @@ source ~/.bashrc
 # 
 # source ~/.bashrc
 
+# for sougou
+fcitx -r --enable fcitx-qimpanel
+
