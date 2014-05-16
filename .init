@@ -45,3 +45,6 @@ cd ~/.vim/bundle/YouCompleteMe && ./install.sh --clang-completer
 
 source ~/.bashrc
 
+# for sougou
+fcitx -r --enable fcitx-qimpanel
+

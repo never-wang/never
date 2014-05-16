@@ -22,3 +22,11 @@ python-appindicator
 # for YouCompleteMe
 cmake
 python-dev
+
+# wqy fonts
+fonts-wqy-microhei
+fonts-wqy-zenhei
+xfonts-wqy
+
+# for sogou
+fcitx
