@@ -215,6 +215,10 @@ map <leader>p :tabp<CR>
 "nmap <C-l> :wincmd l<CR>
 "nmap <C-h> :wincmd h<CR>
 
+"设置下拉菜单的颜色
+highlight Pmenu ctermbg=white ctermfg=black
+highlight PmenuSel ctermbg=darkblue ctermfg=white
+
 "用cscope支持
 set csprg=/usr/bin/cscope
 let Tlist_Ctags_Cmd='/usr/bin/ctags'
@@ -303,3 +307,5 @@ endif
 augroup filetype
    au! BufRead,BufNewFile *.proto setfiletype proto
 augroup end
+
+set backspace=indent,eol,start
