@@ -309,3 +309,8 @@ augroup filetype
 augroup end
 
 set backspace=indent,eol,start
+
+
+" YouCompleteMe 设置
+let g:ycm_confirm_extra_conf = 0
+map <C-W>c :YcmDiag<CR>

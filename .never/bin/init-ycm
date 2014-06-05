@@ -1,0 +1,34 @@
+#!/bin/bash
+#########################################################################
+# Author: Wang Wencan
+# Created Time: 2014年06月05日 星期四 15时47分30秒
+# File Name: init-ycm.sh
+# Description: used to generate the .ycm_extra_conf.py
+#########################################################################
+conf_base_file="$(dirname $0)/../etc/ycm_extra_conf.py"
+
+conf_file=$PWD/.ycm_extra_conf.py
+if [ -f "$conf_file" ]; then
+    echo "[WARN]: .ycm_extra_conf.py exits."
+    ok=
+    output="Dou you want to overwrite it? [y/N]: "
+    while [ -z "$ok" ]; do
+        read -p "$output" input
+        case $input in 
+            Y|y) 
+                ok='y'
+                echo "Overwrite."
+                ;;
+            N|n|'') 
+                ok='y'
+                echo "Abort."
+                exit 0
+                ;;
+            * )
+                output="Please input [y/N]: "
+                ;;
+        esac
+    done
+fi
+cp $conf_base_file $conf_file
+echo "Please edit flags in .ycm_extra_conf.py."
