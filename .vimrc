@@ -313,4 +313,23 @@ set backspace=indent,eol,start
 
 " YouCompleteMe 设置
 let g:ycm_confirm_extra_conf = 0
-map <C-W>c :YcmDiag<CR>
+map <C-W>y :YcmDiag<CR>
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
+
+"set conceallevel=2
+"set concealcursor=vin
+"let g:clang_snippets=1
+"let g:clang_conceal_snippets=1
+"" The single one that works with clang_complete
+"let g:clang_snippets_engine='clang_complete'
+"
+"" Complete options (disable preview scratch window, longest removed to aways
+"" show menu)
+"set completeopt=menu,menuone
+"
+"" Limit popup menu height
+"set pumheight=20
+"
+"" SuperTab completion fall-back 
+"let g:SuperTabDefaultCompletionType='<c-x><c-u><c-p>'
