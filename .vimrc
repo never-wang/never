@@ -314,9 +314,10 @@ set backspace=indent,eol,start
 " YouCompleteMe 设置
 let g:ycm_confirm_extra_conf = 0
 map <C-W>y :YcmDiag<CR>
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_autoclose_preview_window_after_insertion = 1
-
+"let g:ycm_autoclose_preview_window_after_completion = 1
+"let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_add_preview_to_completeopt = 0
+let g:ycm_open_loclist_on_ycm_diags = 1
 "set conceallevel=2
 "set concealcursor=vin
 "let g:clang_snippets=1
