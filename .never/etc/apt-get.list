@@ -3,6 +3,7 @@ ctags
 libncurses5-dev
 cscope
 automake
+libtool
 bison
 libcunit1-dev
 g++
@@ -29,3 +30,8 @@ xfonts-wqy
 
 # for sogou
 fcitx
+
+# for latex 
+texlive
+texlive-xetex
+texlive-latex-extra
