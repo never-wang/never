@@ -1,32 +1,13 @@
+vim
 ctags
 libncurses5-dev
 cscope
 automake
 bison
 libcunit1-dev
-python-wxtools
 g++
 tmux
-synergy
-
-#chinese support
-language-pack-zh-hans
-
-# for goagent
-python-vte
-
-python-tk
-python-matplotlib
-python-appindicator
 
 # for YouCompleteMe
 cmake
 python-dev
-
-# wqy fonts
-fonts-wqy-microhei
-fonts-wqy-zenhei
-xfonts-wqy
-
-# for sogou
-fcitx
