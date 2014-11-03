@@ -7,7 +7,10 @@ bison
 libcunit1-dev
 g++
 tmux
+libtool
 
 # for YouCompleteMe
 cmake
 python-dev
+
+language-pack-zh-hans
