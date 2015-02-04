@@ -37,7 +37,6 @@ Plugin 'Valloric/YouCompleteMe'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
-filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 "
@@ -230,23 +229,23 @@ let Tlist_Auto_Open=1
 
 "使用<leader>e打开当前文件同目录中的文件
 if has("unix")
-map ,e :e <C-R>=expand("%:p:h") . "/" <CR>
+    map ,e :e <C-R>=expand("%:p:h") . "/" <CR>
 else
-map ,e :e <C-R>=expand("%:p:h") . "\" <CR>
+    map ,e :e <C-R>=expand("%:p:h") . "\" <CR>
 endif
 
 "定义CompileRun函数，用来调用进行编译和运行
 func CompileRun()
-exec "w"
-"C程序
-if &filetype == 'c'
-exec "!gcc % -g -o %<"
-exec "!./%<"
-"Java程序
-elseif &filetype == 'java'
-exec "!javac %"
-exec "!java %<"
-endif
+    exec "w"
+    "C程序
+    if &filetype == 'c'
+        exec "!gcc % -g -o %<"
+        exec "!./%<"
+        "Java程序
+    elseif &filetype == 'java'
+        exec "!javac %"
+        exec "!java %<"
+    endif
 endfunc
 "结束定义CompileRun
 
@@ -256,48 +255,47 @@ endfunc
 
 "定义Debug函数，用来调试程序
 func Debug()
-exec "w"
-"C程序
-if &filetype == 'c'
-exec "!gcc % -g -o %<"
-"exec "!gdb %<"
-exec "!insight %<"
-"Java程序
-elseif &filetype == 'java'
-exec "!javac %"
-exec "!jdb %<"
-endif
+    exec "w"
+    "C程序
+    if &filetype == 'c'
+        exec "!gcc % -g -o %<"
+        "exec "!gdb %<"
+        exec "!insight %<"
+        "Java程序
+    elseif &filetype == 'java'
+        exec "!javac %"
+        exec "!jdb %<"
+    endif
 endfunc
 "结束定义Debug
 
 "定义函数SetTitleShell，自动插入文件头
 func SetTitleShell()
-call setline(1, "\#!/bin/bash")
-call append(line("."), "\#########################################################################")
-call append(line(".")+1, "\# Author: Wang Wencan")
-call append(line(".")+2, "\# Created Time: ".strftime("%c"))
-call append(line(".")+3, "\# File Name: ".expand("%"))
-call append(line(".")+4, "\# Description: ")
-call append(line(".")+5, "\#########################################################################")
-call append(line(".")+6, "")
+    call setline(1, "\#!/bin/bash")
+    call append(line("."), "\#########################################################################")
+    call append(line(".")+1, "\# Author: Wang Wencan")
+    call append(line(".")+2, "\# Created Time: ".strftime("%c"))
+    call append(line(".")+3, "\# Description: ")
+    call append(line(".")+4, "\#########################################################################")
+    call append(line(".")+5, "")
 endfunc
 
 "定义函数SetTitlePython，自动插入文件头
 func SetTitlePython()
-call setline(1, "\#!/usr/bin/env python")
-call append(line("."), "\#########################################################################")
-call append(line(".")+1, "\# Author: Wang Wencan")
-call append(line(".")+2, "\# Created Time: ".strftime("%c"))
-call append(line(".")+3, "\# File Name: ".expand("%"))
-call append(line(".")+4, "\# Description: ")
-call append(line(".")+5, "\#########################################################################")
-call append(line(".")+6, "")
+    call setline(1, "\#!/usr/bin/env python")
+    call append(line("."), "\#########################################################################")
+    call append(line(".")+1, "\# Author: Wang Wencan")
+    call append(line(".")+2, "\# Created Time: ".strftime("%c"))
+    "call append(line(".")+3, "\# File Name: ".expand("%"))
+    call append(line(".")+3, "\# Description: ")
+    call append(line(".")+4, "\#########################################################################")
+    call append(line(".")+5, "")
 endfunc
 
 " Source a global configuration file if available
 " XXX Deprecated, please move your changes here in /etc/vim/vimrc
 if filereadable("/etc/vim/vimrc.local")
-  source /etc/vim/vimrc.local
+    source /etc/vim/vimrc.local
 endif
 
 " rename the tmux window with the filename opened in vim
@@ -305,7 +303,7 @@ endif
 
 " Protobuf support
 augroup filetype
-   au! BufRead,BufNewFile *.proto setfiletype proto
+au! BufRead,BufNewFile *.proto setfiletype proto
 augroup end
 
 set backspace=indent,eol,start
@@ -316,6 +314,7 @@ let g:ycm_confirm_extra_conf = 0
 map <C-W>y :YcmDiag<CR>
 "let g:ycm_autoclose_preview_window_after_completion = 1
 "let g:ycm_autoclose_preview_window_after_insertion = 1
+set completeopt-=preview
 let g:ycm_add_preview_to_completeopt = 0
 let g:ycm_open_loclist_on_ycm_diags = 1
 "set conceallevel=2
@@ -334,3 +333,7 @@ let g:ycm_open_loclist_on_ycm_diags = 1
 "
 "" SuperTab completion fall-back 
 "let g:SuperTabDefaultCompletionType='<c-x><c-u><c-p>'
+
+
+"C-support
+"" let g:C_Styles = { '*.c,*.h' : 'default', '*.cc,*.cpp,*.hh' : 'CPP' }
