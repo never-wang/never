@@ -54,10 +54,6 @@ call vundle#end()            " required
 " options, so any other options should be set AFTER setting 'compatible'.
 "set compatible
 
-" Vim5 and later versions support syntax highlighting. Uncommenting the next
-" line enables syntax highlighting by default.
-syntax on
-
 " If using a dark background within the editing area and syntax highlighting
 " turn on this option as well
 "set background=back
@@ -337,3 +333,9 @@ let g:ycm_open_loclist_on_ycm_diags = 1
 
 "C-support
 "" let g:C_Styles = { '*.c,*.h' : 'default', '*.cc,*.cpp,*.hh' : 'CPP' }
+
+" for gdb
+" set previewheight=12
+run macros/gdb_mappings.vim
+" set asm=0
+" set gdbprg=gdb_invocation
