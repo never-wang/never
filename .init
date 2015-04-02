@@ -7,11 +7,11 @@
 
 DIR=`dirname $0`
 
-LIB_PATH=`readlink -m $PWD/$DIR/.never/lib`
+LIB_PATH="$PWD/$DIR/.never/lib"
 
 source $LIB_PATH/sh-libs
     
-ROOT_PATH=`readlink -m $LIB_PATH/../../`
+ROOT_PATH="$LIB_PATH/../../"
 
 _debian_install()
 {
@@ -22,26 +22,27 @@ _debian_install()
     _execute "sudo apt-get install -y $packages"
 }
 
-_debian_install
+# _debian_install
 
 #add source .never/bashrc into ~/bashrc
 MY_BASHRC_PATH=~/.never/bashrc
-IF_SOURCE=`grep "$MY_BASHRC_PATH" ~/.bashrc`
+if [ -e ~/.bashrc ]; then
+  IF_SOURCE=`grep "$MY_BASHRC_PATH" ~/.bashrc`
+else
+  IF_SOURCE=
+fi
 [ -z "$IF_SOURCE" ] && echo "source $MY_BASHRC_PATH" >> ~/.bashrc
 
 find $ROOT_PATH -maxdepth 1 -mindepth 1 -exec cp -rf {} ~ \;
 
 # for YouCompleteMe
-git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-vim +PluginInstall +qall
-cd ~/.vim/bundle/YouCompleteMe && ./install.sh --clang-completer
+# git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+# vim +PluginInstall +qall
+# cd ~/.vim/bundle/YouCompleteMe && ./install.sh --clang-completer
 
 # for goagent 
-cd ~/.never/bin/goagent/server && python uploader.zip
-cd ~/.never/bin/goagent/local && python addto-startup.py
-
-# for YouCompleteMe
-cd ~/.vim/bundle/YouCompleteMe && ./install.sh --clang-completer
+# cd ~/.never/bin/goagent/server && python uploader.zip
+# cd ~/.never/bin/goagent/local && python addto-startup.py
 
 source ~/.bashrc
 # AUTOSTART=/home/never/.config/autostart
@@ -50,25 +51,25 @@ source ~/.bashrc
 # source ~/.bashrc
 
 # for sougou
-fcitx -r --enable fcitx-qimpanel
+# fcitx -r --enable fcitx-qimpanel
 
 # for vimgdb
-cd ~/.never/etc && tar xvf vim74-with-gdb.tar.gz
-sudo apt-get remove -y vim vim-runtime gvim
-cd vim74-with-gdb
-./configure --with-features=huge \
-    --enable-multibyte \
-    --enable-rubyinterp \
-    --enable-pythoninterp \
-    --with-python-config-dir=/usr/lib/python2.7/config \
-    --enable-perlinterp \
-    --enable-luainterp \
-    --enable-gui=gtk2 --enable-cscope --enable-gdb \
-    --prefix=/usr --exec-prefix=/usr
-make VIMRUNTIMEDIR=/usr/share/vim/vim74
-sudo make install
-sudo update-alternatives --install /usr/bin/editor editor /usr/bin/vim 1
-sudo update-alternatives --set editor /usr/bin/vim
-sudo update-alternatives --install /usr/bin/vi vi /usr/bin/vim 1
-sudo update-alternatives --set vi /usr/bin/vim
-cd ~/.never/etc && rm -r vim74-with-gdb
+# cd ~/.never/etc && tar xvf vim74-with-gdb.tar.gz
+# sudo apt-get remove -y vim vim-runtime gvim
+# cd vim74-with-gdb
+# ./configure --with-features=huge \
+#     --enable-multibyte \
+#     --enable-rubyinterp \
+#     --enable-pythoninterp \
+#     --with-python-config-dir=/usr/lib/python2.7/config \
+#     --enable-perlinterp \
+#     --enable-luainterp \
+#     --enable-gui=gtk2 --enable-cscope --enable-gdb \
+#     --prefix=/usr --exec-prefix=/usr
+# make VIMRUNTIMEDIR=/usr/share/vim/vim74
+# sudo make install
+# sudo update-alternatives --install /usr/bin/editor editor /usr/bin/vim 1
+# sudo update-alternatives --set editor /usr/bin/vim
+# sudo update-alternatives --install /usr/bin/vi vi /usr/bin/vim 1
+# sudo update-alternatives --set vi /usr/bin/vim
+# cd ~/.never/etc && rm -r vim74-with-gdb

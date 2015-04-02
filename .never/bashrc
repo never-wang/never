@@ -1,7 +1,7 @@
 # User specific aliases and functions
 function parse_git_branch {
     local TOP_DIR=`git rev-parse --show-toplevel 2> /dev/null`
-    local HOME_DIR=`readlink -m ~`
+    local HOME_DIR="~"
 
     #check if in git repository
     #echo `git branch | grep "Not a git repository"`
