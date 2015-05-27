@@ -38,6 +38,10 @@ function proml {
 proml
 export PATH="~/.never/bin:$PATH"
 
+if [ -f ~/.git-completion.bash ]; then
+    source ~/.git-completion.bash
+fi
+
 #256 colour support
 #export TERM=xterm-256color
 
