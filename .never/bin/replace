@@ -26,7 +26,7 @@ FILE_REG=$3
 
 files=$(find . -regex "$FILE_REG")
 for file in $files; do
-    echo $file
-    sed -i "s/$SRC_REG/$DST_REG/g" $file
+    echo "$file"
+    sed -i "" "s/$SRC_REG/$DST_REG/g" "$file"
 done
 
