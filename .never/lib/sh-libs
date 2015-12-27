@@ -13,7 +13,7 @@ if [ -z "$SOURCE_SH_LIBS" ]; then
         echo $cmd > $OUTPUT
         $cmd
     }
-    
-    ETC_PATH=`readlink -m $LIB_PATH/../etc`
+
+    ETC_PATH=$HOME/.never/etc
     OUTPUT=/dev/null
 fi
