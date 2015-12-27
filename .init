@@ -27,11 +27,12 @@ _debian_install()
 #add source .never/bashrc into ~/bashrc
 MY_BASHRC_PATH=~/.never/bashrc
 if [ -e ~/.bashrc ]; then
-  IF_SOURCE=`grep "$MY_BASHRC_PATH" ~/.bashrc`
+  IF_SOURCE=`grep "$MY_BASHRC_PATH" ~/.bash_profile`
 else
   IF_SOURCE=
 fi
-[ -z "$IF_SOURCE" ] && echo "source $MY_BASHRC_PATH" >> ~/.bashrc
+
+[ -z "$IF_SOURCE" ] && echo "source $MY_BASHRC_PATH" >> ~/.bash_profile
 
 find $ROOT_PATH -maxdepth 1 -mindepth 1 -exec cp -rf {} ~ \;
 
