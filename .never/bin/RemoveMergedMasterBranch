@@ -1,0 +1,16 @@
+#!/bin/bash
+#########################################################################
+# Author: Wang Wencan
+# Created Time: 二  8/18 14:13:57 2015
+# Description: 
+#########################################################################
+remote_branches=`git branch --merged master -r | grep -v master | sed s/origin\\\\///g`
+
+if [ -n "$remote_branches" ]; then
+    git push origin --delete $remote_branches
+fi
+
+local_branches=`git branch --merged master | grep -v master | sed s/origin\\\\///g`
+if [ -n "$local_branches" ]; then
+    git branch -d $local_branches
+fi

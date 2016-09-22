@@ -42,6 +42,8 @@ if [ -f ~/.git-completion.bash ]; then
     source ~/.git-completion.bash
 fi
 
+set paste
+
 #256 colour support
 #export TERM=xterm-256color
 
