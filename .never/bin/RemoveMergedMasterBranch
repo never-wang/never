@@ -10,8 +10,6 @@ if [ -n "$remote_branches" ]; then
     git push origin --delete $remote_branches
 fi
 
-git branch --merged master
-
 local_branch=`git branch --merged master | grep -v develop | grep -v master | sed s/origin\\\\///g`
 
 if [ -n "$local_branches" ]; then

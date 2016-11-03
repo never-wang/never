@@ -43,6 +43,7 @@ if [ -f ~/.git-completion.bash ]; then
 fi
 
 set paste
+export EDITOR=vim
 
 #256 colour support
 #export TERM=xterm-256color

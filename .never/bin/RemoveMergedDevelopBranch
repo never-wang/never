@@ -6,10 +6,6 @@
 #########################################################################
 remote_branches=`git branch --merged origin/master -r | grep -v HEAD | grep -v develop | grep -v master | sed s/origin\\\\///g`
 
-echo $remote_branches
-
-exit
-
 if [ -n "$remote_branches" ]; then
     git push origin --delete $remote_branches
 fi
