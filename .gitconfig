@@ -9,6 +9,7 @@
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     lt = log --branches --remotes --tags --graph --oneline --decorate --color
     ck = checkout
+    tg = "!sh -c \"git tag -a $1 -m $1\" -"
 
 # for default, push current branch
 [push]
