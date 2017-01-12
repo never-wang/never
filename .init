@@ -45,7 +45,7 @@ find $ROOT_PATH -maxdepth 1 -mindepth 1 -exec cp -rf {} ~ \;
 # cd ~/.never/bin/goagent/server && python uploader.zip
 # cd ~/.never/bin/goagent/local && python addto-startup.py
 
-source ~/.bashrc
+source ~/.bash_profile
 # AUTOSTART=/home/never/.config/autostart
 # cp ~/.never/etc/eye.desktop $AUTOSTART/eye.desktop 
 # 
