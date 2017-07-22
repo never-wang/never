@@ -6,7 +6,7 @@
     editor = vim
     excludesfile = /Users/wangwencan/.gitignore_global
 [alias]    
-    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit --date=format:'%a, %F, %R'
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr, %cd) %C(bold blue)<%an>%Creset' --abbrev-commit --date=format:'%a, %F, %R'
     lt = log --branches --remotes --tags --graph --oneline --decorate --color
     ck = checkout
     tg = "!sh -c \"git tag -a $1 -m $1\" -"
