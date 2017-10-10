@@ -12,7 +12,7 @@ if [ -n "$remote_branches" ]; then
     git push origin --delete $remote_branches
 fi
 
-local_branch=`git branch --merged develop | grep -v develop | grep -v master | sed s/origin\\\\///g`
+local_branches=`git branch --merged develop | grep -v develop | grep -v master`
 
 if [ -n "$local_branches" ]; then
     git branch -d $local_branches
@@ -24,7 +24,7 @@ if [ -n "$remote_branches" ]; then
     git push origin --delete $remote_branches
 fi
 
-local_branch=`git branch --merged master | grep -v develop | grep -v master | sed s/origin\\\\///g`
+local_branches=`git branch --merged master | grep -v develop | grep -v master`
 
 if [ -n "$local_branches" ]; then
     git branch -d $local_branches
