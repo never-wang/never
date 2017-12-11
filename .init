@@ -34,6 +34,7 @@ fi
 
 [ -z "$IF_SOURCE" ] && echo "source $MY_BASHRC_PATH" >> ~/.bash_profile
 
+echo fuck1
 find $ROOT_PATH -maxdepth 1 -mindepth 1 -exec cp -rf {} ~ \;
 echo fuck2
 
