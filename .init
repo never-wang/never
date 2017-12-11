@@ -24,9 +24,9 @@ _debian_install()
 
 # _debian_install
 
-#add source .never/bashrc into ~/bashrc
+#add source .never/bash_profile into ~/bashrc
 MY_BASHRC_PATH=~/.never/bashrc
-if [ -e ~/.bashrc ]; then
+if [ -e ~/.bash_profile ]; then
   IF_SOURCE=`grep "$MY_BASHRC_PATH" ~/.bash_profile`
 else
   IF_SOURCE=
@@ -35,6 +35,7 @@ fi
 [ -z "$IF_SOURCE" ] && echo "source $MY_BASHRC_PATH" >> ~/.bash_profile
 
 find $ROOT_PATH -maxdepth 1 -mindepth 1 -exec cp -rf {} ~ \;
+echo fuck2
 
 # for YouCompleteMe
 # git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
@@ -46,6 +47,7 @@ find $ROOT_PATH -maxdepth 1 -mindepth 1 -exec cp -rf {} ~ \;
 # cd ~/.never/bin/goagent/local && python addto-startup.py
 
 source ~/.bash_profile
+echo fuck3
 # AUTOSTART=/home/never/.config/autostart
 # cp ~/.never/etc/eye.desktop $AUTOSTART/eye.desktop 
 # 
