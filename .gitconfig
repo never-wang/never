@@ -22,3 +22,6 @@
 	trustExitCode = true
 [color]
 	ui = auto
+[http]
+	sslCAInfo = /etc/ssl/certs/git.blowfires.com.cer
+	sslVerify = false
