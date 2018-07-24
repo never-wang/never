@@ -1,0 +1,23 @@
+#!/bin/bash
+set -e
+
+jarFile=$1
+
+tmpDir=$jarFile-tmp
+mkdir -p $tmpDir
+cp $jarFile $tmpDir
+cd $tmpDir
+
+inflatedFiles=`jar xvf $jarFile`
+srcDir=$1-src
+
+for inflatedFile in $inflatedFiles; do
+    if [[ $inflatedFile =~ .*\.class$ ]]; then
+        echo $inflatedFile
+        jad -o -r -sjava -d$srcDir $inflatedFile
+    fi
+done
+
+cp -r $srcDir ../
+cd ..
+rm -r $tmpDir 

@@ -1,0 +1,15 @@
+#!/bin/bash
+#########################################################################
+# Author: Wang Wencan
+# Created Time: Thu Mar  1 17:15:40 2018
+# Description: 
+#########################################################################
+for branch in `git branch -r | grep -v HEAD | grep -v master | grep -v develop`;do 
+    commit_time=`git show --format="%at" $branch | head -n 1`
+    current_time=`date +%s`
+    gap_day=$(((${current_time} - ${commit_time}) / 24 / 3600))
+    if [ $gap_day -gt 100 ]; then
+        git push origin --delete `echo $branch | sed s/origin\\\\///g`
+    fi
+done 
+
