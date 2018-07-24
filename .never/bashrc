@@ -42,6 +42,10 @@ if [ -f ~/.git-completion.bash ]; then
     source ~/.git-completion.bash
 fi
 
+if [ -f ~/.ssh-completion.bash ]; then
+    source ~/.ssh-completion.bash
+fi
+
 set paste
 export EDITOR=vim
 
