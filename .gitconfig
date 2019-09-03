@@ -1,10 +1,10 @@
 [user]
-	name = Wencan Wang
+	name = Wang Wencan
 	email = wencan.wang@ihandysoft.com
 
 [core]
     editor = vim
-	excludesfile = /Users/wencanwang/.gitignore_global
+	excludesfile = /Users/wangwencan/.gitignore_global
 [alias]    
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr, %cd) %C(bold blue)<%an>%Creset' --abbrev-commit --date=format:'%a, %F, %R'
     lt = log --branches --remotes --tags --graph --oneline --decorate --color
