@@ -34,9 +34,7 @@ fi
 
 [ -z "$IF_SOURCE" ] && echo "source $MY_BASHRC_PATH" >> ~/.bash_profile
 
-echo fuck1
 find $ROOT_PATH -maxdepth 1 -mindepth 1 -exec cp -rf {} ~ \;
-echo fuck2
 
 # for YouCompleteMe
 # git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
@@ -48,7 +46,6 @@ echo fuck2
 # cd ~/.never/bin/goagent/local && python addto-startup.py
 
 source ~/.bash_profile
-echo fuck3
 # AUTOSTART=/home/never/.config/autostart
 # cp ~/.never/etc/eye.desktop $AUTOSTART/eye.desktop 
 # 
@@ -77,3 +74,6 @@ echo fuck3
 # sudo update-alternatives --install /usr/bin/vi vi /usr/bin/vim 1
 # sudo update-alternatives --set vi /usr/bin/vim
 # cd ~/.never/etc && rm -r vim74-with-gdb
+
+#install synx
+sudo gem install synx
